@@ -1355,8 +1355,8 @@ sub result
     $self->{"result"} = $result;
     $self->{"status"} = $status;
 
-    $self->errorize($status);
     if( $status == -1 || $status == 0 ) {
+        $self->errorize($status);
         return undef;
     }
 
