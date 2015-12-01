@@ -1,11 +1,19 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Net-LDAPapi
-version:      3.0.3
-version_from: LDAPapi.pm
-installdirs:  site
-requires:
-    Convert::ASN1:                 0.19
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.17
+---
+abstract: unknown
+author:
+  - unknown
+build_requires: {}
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Net-LDAPapi
+no_index:
+  directory:
+    - t
+    - inc
+resources:
+  repository: https://github.com/quanah/net-ldapapi.git
+version: v3.0.4
