@@ -18,20 +18,22 @@ print "modinit  - ok\n";
 ## Change these values for test to work...
 ##
 
-print "\nEnter LDAP Server: ";
-chomp($ldap_host = <>);
-print "Enter port: ";
-chomp($ldap_port = <>);
-print "Enter Search Filter (ex. uid=abc123): ";
-chomp($filter = <>);
-print "Enter LDAP Search Base (ex. o=Org, c=US): ";
-chomp($BASEDN = <>);
+if (!$ENV{LDAP_TEST_HOST})
+{
+   die "LDAP_TEST_HOST not set";
+}
+$ldap_host = $ENV{LDAP_TEST_HOST};
+$ldap_port = $ENV{LDAP_TEST_PORT};
+$filter    = $ENV{LDAP_TEST_FILTER};
+$BASEDN    = $ENV{LDAP_TEST_BASEDN};
+
+printf "\nLDAP Server: %s", $ldap_host;
+printf "\nLDAP port: %s", $ldap_port;
+printf "\nSearch Filter (ex. uid=abc123): %s", $filter;
+printf "\nLDAP Search Base (ex. o=Org, c=US): %s", $BASEDN;
 print "\n";
 
-if (!$ldap_host)
-{
-   die "Please edit \$BASEDN, \$filter and \$ldap_host in test.pl.\n";
-}
+
 
 ##
 ##  Initialize LDAP Connection
